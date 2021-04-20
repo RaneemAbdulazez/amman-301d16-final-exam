@@ -45,9 +45,9 @@ app.delete("/favorite-quotes/:id",deletecahe)
 
 function deletecahe(req,res){
     const id=req.params.id;
+    console.log(id)
 
     const sql=`DELETE FROM simpsons WHERE id=$1;`
-
 
     const Val=[id]
     client.query(sql,Val).then(
@@ -67,7 +67,7 @@ function deletecahe(req,res){
 
 function details(req,res){
 const id=req.params.id
-console.log(id)
+// console.log(id)
     const sql=`SELECT *FROM simpsons WHERE id=$1;`
 
     const Val=[id]
@@ -84,10 +84,11 @@ console.log(id)
 
 function favorender(req,res){
 
-    const sql=`SELECT *FROM simpsons WHERE source=$1;`
+    const sql=`SELECT * FROM simpsons WHERE source=$1;`
 
     const Val=['api']
     client.query(sql,Val).then(sips=>{
+        // console.log("rows",sips.rows)
 
         res.render('fav',{simps:sips.rows})
 
@@ -100,13 +101,15 @@ function favorender(req,res){
 }
 function favo(req,res){
     
-let {quote,character_s,imageurl,characterDirection}=req.body
+let  {quote,character_s,imageurl,characterDirection}=req.body
     // console.log("-------------------------",req.body)
     const sql=`INSERT INTO simpsons(quote,character_s,imageurl,characterDirection,source) VALUES($1,$2,$3,$4,$5);`
 
-    const Val=[quote,character_s,imageurl,characterDirection,'api']
-    console.log(Val,"--------vals")
-    client.query(sql,Val).then(
+    const VALUES=[quote,character_s,imageurl,characterDirection,'api']
+    // console.log(VALUES,"--------vals")
+    
+    client.query(sql,VALUES).then(
+        
 
         res.redirect('/favorite-quotes')
     )
