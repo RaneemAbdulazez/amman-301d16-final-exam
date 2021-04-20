@@ -64,3 +64,21 @@ ___
 ## Submission Links
  -  [Code Challenge](https://docs.google.com/forms/d/e/1FAIpQLSeZphxFhu8OBjgUJ8YdsNeS0QJAmNNlmYoE4IIgq9dVW3-NwQ/viewform?usp=sf_link)
  -  [Web Application](https://docs.google.com/forms/d/e/1FAIpQLSe5suGV3usx62uefLlju9gUwZrw8oAK4YPqjdXEH1Yt6_4zpQ/viewform?usp=sf_link)
+
+
+
+
+
+
+ First Requirement: (18.5 pt)
+
+As a user I want to display a total of 10 quotes from the API in my homepage so that I can browse available quotes.
+
+As a user I want to be able to add a quote that I like to my favorites so that I can view it later.
+
+How we are going to implement it
+Create an endpoint and point it to the /.
+Create a callback function that will get 10 quotes from the API.
+When using the superagent make sure to set the user-agent in the request headers ex: superagent.get(url).set('User-Agent', '1.0').then() in order for the request to work properly.
+You will need to render the data using either flex box or the grid style.
+Add a button that will save the quote and all of its information in our DB table.

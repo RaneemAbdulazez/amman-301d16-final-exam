@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <header><h1>thi is </h1></header>
+    <main>
+        <% simps.forEach(simp=>{%> 
+
+            <img src="<%= simp.image %> " >
+            <h2><%= simp.character %></h2>
+            <h3><%= simp.quote %></h3>
+<form action="/favorite-quotes" method="post">
+
+    <input name ="image"type="hidden" value="<%= simp.image %>">
+    <input  name ="character" type="hidden" value="<%= simp.character %>">
+
+    <input name ="quote" type="hidden" value="<%= simp.quote %>">
+
+
+
+<button type="submit">favourit</button>
+
+
+
+</form>
+
+
+
+
+            <%  }) %> 
+    </main>
+</body>
+</html>
