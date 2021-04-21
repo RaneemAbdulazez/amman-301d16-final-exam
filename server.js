@@ -88,7 +88,7 @@ function favorender(req,res){
 
     const Val=['api']
     client.query(sql,Val).then(sips=>{
-        // console.log("rows",sips.rows)
+        console.log("rows",sips.rows)
 
         res.render('fav',{simps:sips.rows})
 

@@ -4,14 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/reset.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
     <title>Document</title>
 </head>
 <body>
 
-    <header><h1>thi is </h1></header>
-    <main>
-        <% simps.forEach(simp=>{%> 
+    <%- include ('navbar.ejs') %>
 
+    <main>
+
+        
+        <% simps.forEach(simp=>{%>    
+            
+
+            <section class="<%= simp.characterDirection %> ">
             <img src="<%= simp.image %> " >
             <h2><%= simp.character %></h2>
             <h3><%= simp.quote %></h3>
@@ -19,12 +28,14 @@
 
     <input name ="imageurl"type="hidden" value="<%= simp.image %>">
     <input  name ="character_s" type="hidden" value="<%= simp.character %>">
+    <input name ="quote" type="hidden" value="<%= simp.quote %>">
 
-    <input name ="characterDirection" type="hidden" value="<%= simp.quote %>">
+    <input name ="characterDirection" type="hidden" value="<%= simp.characterDirection %>">
 
 
 
-<button type="submit">favourit</button>
+<button type="submit">favor character</button>
+
 
 
 
@@ -32,6 +43,7 @@
 
 
 
+</section>
 
             <%  }) %> 
     </main>
