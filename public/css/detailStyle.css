@@ -1,0 +1,26 @@
+body{
+    background-color: #62C8E4;
+}
+
+
+main{
+    display: flex;
+    justify-content: center;
+}
+section{
+    /* display: flex; */
+    border: solid grey;
+    color:  #fefb1e;
+    width: 50%;
+    margin: 10px;
+    background-color: #16a085;
+justify-content: center;
+}
+
+button {
+    background-color: #16a085;
+    color: #fefb1e;
+  
+    width: 120px;
+    height: 20px;
+  }
